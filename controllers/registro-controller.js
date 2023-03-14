@@ -7,12 +7,10 @@ formulario.addEventListener("submit", (evento) => {
   const nombre = document.querySelector("[data-nombre]").value;
   const email = document.querySelector("[data-email]").value;
 
-  console.log(nombre, "-", email);
-  console.log("formulario");
   clienteServices
     .crearCliente(nombre, email)
     .then((respuesta) => {
-      window.location.href = "/screens/registro_completado.html"
+      window.location.href = "/screens/registro_completado.html";
     })
     .catch((err) => console.log(err));
 });
