@@ -28,9 +28,9 @@ const actualizarCliente = (nombre, email, id) => {
   return fetch(`http://localhost:3000/perfil/${id}`, {
     method: "PUT",
     headers: {
-      "Content-Type": "aplication/json",
+      "Content-Type": "application/json",
     },
-    body: JSON.stringify({ nombre, email }),
+    body: JSON.stringify({ nombre, email, id }),
   })
     .then((respuesta) => respuesta)
     .catch((err) => console.log(err));

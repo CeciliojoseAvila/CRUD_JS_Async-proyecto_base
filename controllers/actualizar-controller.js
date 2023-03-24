@@ -6,7 +6,7 @@ const obtenerInformacion = async () => {
   const url = new URL(window.location);
   const id = url.searchParams.get("id");
 
-  if (id == null) {
+  if (id === null) {
     window.location.href = "/screens/error.html";
   }
   const nombre = document.querySelector("[data-nombre]");
@@ -14,7 +14,7 @@ const obtenerInformacion = async () => {
 
   try {
     const perfil = await clienteServices.detalleCliente(id);
-  
+
     if (perfil.nombre && perfil.email) {
       nombre.value = perfil.nombre;
       email.value = perfil.email;
@@ -22,7 +22,6 @@ const obtenerInformacion = async () => {
       throw new Error();
     }
   } catch (error) {
-   
     window.location.href = "/screens/error.html";
   }
 };
